@@ -1,4 +1,4 @@
-import Template from './componentes/template' 
+import Template from './componentes/template'
 import {
   BrowserRouter as Router,
   Switch,
@@ -9,22 +9,19 @@ function App() {
   return (
     <Router>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/users">Users</Link>
-            </li>
-          </ul>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <a class="navbar-brand" href="/">Navbar</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <Link className="nav-item nav-link" to="/">Home</Link>
+              <Link className="nav-item nav-link" to="/about">About</Link>
+              <Link className="nav-item nav-link" to="/users">Users</Link>
+            </div>
+          </div>
         </nav>
-
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/about">
             <About />
@@ -32,8 +29,8 @@ function App() {
           <Route path="/users">
             <Users />
           </Route>
-          <Route path="/">
-            <Template/>
+          <Route path="/" exact>
+            <Template />
           </Route>
         </Switch>
       </div>
