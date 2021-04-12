@@ -1,11 +1,10 @@
-
+import Template from './componentes/template' 
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-
 function App() {
   return (
     <Router>
@@ -34,15 +33,12 @@ function App() {
             <Users />
           </Route>
           <Route path="/">
-            <Home />
+            <Template/>
           </Route>
         </Switch>
       </div>
     </Router>
   );
-}
-function Home() {
-  return <h2>Home</h2>;
 }
 
 function About() {
