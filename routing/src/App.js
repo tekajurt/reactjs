@@ -19,6 +19,9 @@ function App() {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
+              {/*
+                links que son etiquetas de react para el redireccionado (routing)
+              */}
               <Link className="nav-item nav-link" to="/">Home</Link>
               <Link className="nav-item nav-link" to="/about">About</Link>
               <Link className="nav-item nav-link" to="/users">Users</Link>
