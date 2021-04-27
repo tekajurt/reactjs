@@ -1,4 +1,6 @@
 import Template from './componentes/template'
+import About from './componentes/about'
+import Users from './componentes/users'
 import {
   BrowserRouter as Router,
   Switch,
@@ -22,12 +24,16 @@ function App() {
               {/*
                 links que son etiquetas de react para el redireccionado (routing)
               */}
-              <Link className="nav-item nav-link" to="/">Home</Link>
+              <Link className="nav-item nav-link" activeStyle={{ "background-color": '#bdc3c9!important' }} to="/">Home</Link>
               <Link className="nav-item nav-link" to="/about">About</Link>
               <Link className="nav-item nav-link" to="/users">Users</Link>
             </div>
           </div>
         </nav>
+        {/*
+          switch es una etiqueta jsx de react que permite gestionar el routing, notece la diferencia que la etiqueta de arriba es Router, aca para
+          cada ruta es "Route", donde como parametro se le agrega el path="" para demostrar lo que sucede luego de el / (incluyendo el /)
+        */}
         <Switch>
           <Route path="/about">
             <About />
@@ -36,19 +42,14 @@ function App() {
             <Users />
           </Route>
           <Route path="/" exact>
+            {/*
+            el exact es para renderizar solo cuando el / esta solo, sino se asume arriba que, por ejemplo,  / y users en la misma vez
+          */}
             <Template />
           </Route>
         </Switch>
       </div>
-    </Router>
+    </Router >
   );
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 export default App;
